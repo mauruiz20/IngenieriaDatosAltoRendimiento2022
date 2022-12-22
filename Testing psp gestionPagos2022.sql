@@ -20,3 +20,16 @@ CALL gestion_pagos2022.psp_dame_usuario(103);
 CALL gestion_pagos2022.psp_daralta_usuario(103);
 CALL gestion_pagos2022.psp_darbaja_usuario(103);
 
+SELECT * FROM MediosPago;
+
+CALL gestion_pagos2022.psp_crear_medio_pago('Uala', 'Prepago', null);
+CALL gestion_pagos2022.psp_modificar_medio_pago(8, 'Uala', 'Prepago', null);
+CALL gestion_pagos2022.psp_borrar_medio_pago(8);
+CALL gestion_pagos2022.psp_dame_medio_pago(9);
+
+SELECT * FROM Planes JOIN MediosPago USING(IdMedioPago);
+
+CALL gestion_pagos2022.psp_crear_plan(9, '123456', '5', 50.00);
+CALL gestion_pagos2022.psp_modificar_plan(101, '123456', '6', 60.50);
+CALL gestion_pagos2022.psp_borrar_plan(101);
+CALL gestion_pagos2022.psp_dame_plan(101);
